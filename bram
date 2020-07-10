@@ -1,0 +1,82 @@
+#! /usr/bin/env python3
+
+import json
+import os
+import random
+import sys
+import time
+
+try:
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
+    
+except Exception as e:
+    print("BrainRAM Error:", e)
+    exit()
+    
+class BrainRAM(Gtk.Window):
+    def __init__(self):
+        Gtk.Window.__init__(self, title="BrainRAM")
+        
+        self.pick_a_question()
+        self.setup_ui()
+        
+    def setup_ui(self):
+        self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        self.set_border_width(10)
+        self.add(self.box)
+        
+        self.logo = Gtk.Image.new_from_file('logo.png')
+        self.box.pack_start(self.logo, False, True, 10)
+        self.box.pack_start(self.question, False, True, 0)
+        self.status = Gtk.Label()
+        for answer in self.answers:
+            self.box.pack_start(answer, False, True, 0)
+            
+        self.box.pack_start(self.status, False, True, 0)
+        
+            
+    def pick_a_question(self):
+        files = os.listdir("knowledges")
+        file_index = random.randint(0,len(files)-1)
+        f = open(os.path.expanduser("~/.bram/knowledges/")+files[file_index])
+        self.knowledge = json.load(f)
+        f.close()
+        self.question = Gtk.Label(label=self.knowledge["question"])
+        self.answers = []
+            
+        keys = [k for k in self.knowledge["answers"].keys()]
+        random.shuffle(keys)
+        for key in keys:
+            gtk_button = Gtk.Button(label=key)
+            gtk_button.connect("clicked", self.process_answer)
+            self.answers.append(gtk_button)
+            
+    def process_answer(self, widget):
+        if self.knowledge["answers"][widget.get_label()]:
+            self.status.set_label("Bonne réponse.")
+            
+        else:
+            self.status.set_label("Mauvaise réponse.")
+            
+        for button in self.answers:
+            button.set_sensitive(False)
+            
+try:
+    minutes_to_sleeps = int(sys.argv[1])
+    
+except Exception as e:
+    minutes_to_sleeps = 0
+
+def iteration():
+    win = BrainRAM()
+    win.connect("destroy", Gtk.main_quit)
+    win.show_all()
+    Gtk.main()
+
+iteration()
+
+while minutes_to_sleeps:
+    time.sleep(60 * minutes_to_sleeps)
+    iteration()
