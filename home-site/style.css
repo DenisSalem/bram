@@ -30,7 +30,8 @@ h1
 ul
     {padding: 0px;}
 ul,
-p
+p,
+pre
     {margin-left: 4em;}
     
 #content

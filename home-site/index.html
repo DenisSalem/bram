@@ -9,7 +9,15 @@
             <img src="logo.png">
         </header>
         <div id="content">
+            <h1>WTF?</h1>
+            <p>This is your tiny and friendly software made with GTK+ and Python to 
+            ask you some stuff to check if you learn your lesson.</p>
+            <p><i>You're welcome.</i></p>
+            <p>You decide the interval of time for each quiz to spawn.</p>
+            <p>Question are picked randomly.</p>
+            <p><b>YOU</b> write your quiz.</p>
             <h1>DEPENDENCIES</h1>
+            <p>Well, not much.</p>
             <ul>
                 <li>Python 3</li>
                 <li>PyGObject</li>
@@ -21,8 +29,23 @@
             <h1>INSTALLATION</h1>
             <p>./setup.py install --user</p>
             <p><i>It might be necessary to install PyGObject from your distribution package system.</i></p>
-            <h1>KNOWLEDGES</h1>
-            <p>Your knowledges are stored as json files in ~/.bram/knowledges</p>
+            <h1>BUILD YOUR KNOWLEDGES DATABASE</h1>
+            <p>Your knowledges are stored as <b>JSON</b> files in ~/.bram/knowledges</p>
+            <p>A typical quiz look's like the following:</p>
+            <pre>{
+    "question": "Which number is a Mercenne prime?",
+    "answers" : {
+        "7": true,
+        "9": false,
+        "4": false,
+        "5": false
+    }
+}</pre>
+            <p>Some tips to keep in mind:</p>
+            <ul>
+                <li>Your quiz <b>must</b> have a <i>question</i> field</li>
+                <li>The <i>answers</i> field may have as many items as you want.</li>
+            </ul>
         </div>
     </body>
 </html>
