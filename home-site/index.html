@@ -8,29 +8,21 @@
         <header>
             <img src="logo.png">
         </header>
-        <div id="page1" class="page">
-            <div>
-                <div>
-                    <h1>Consolidez vos connaissances</h1>
-                    <p>En étant intérogé périodiquement sur ce que vous avez apris.</p>
-                </div>
-            </div>
-        </div>
-        <div id="page2" class="page">
-            <div>
-                <div>
-                    <h1>Créez vos fiches de révisions</h1>
-                    <p>Au format JSON, organisées par thématiques.</p>
-                </div>
-            </div>
-        </div>
-        <div id="page3" class="page">
-            <div>
-                <div>
-                    <h1>bram est un logiciel libre portable et minuscule</h1>
-                    <p>écrite en Python et reposant sur GTK+ pour l'interface graphique.</p>
-                </div>
-            </div>
+        <div id="content">
+            <h1>DEPENDENCIES</h1>
+            <ul>
+                <li>Python 3</li>
+                <li>PyGObject</li>
+                <li>setuptools</li>
+            </ul>
+            <h1>USAGE</h1>
+                <p>$ bram [interval]</p>
+                <p><i><b>interval</b> is the number of minutes between each quiz.</i></p>
+            <h1>INSTALLATION</h1>
+            <p>./setup.py install --user</p>
+            <p><i>It might be necessary to install PyGObject from your distribution package system.</i></p>
+            <h1>KNOWLEDGES</h1>
+            <p>Your knowledges are stored as json files in ~/.bram/knowledges</p>
         </div>
     </body>
 </html>

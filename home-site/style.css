@@ -10,7 +10,6 @@ header img,
 h1,
 p
     {color: black;
-    color: black;
     opacity: 0.85;}
 
 header img
@@ -28,70 +27,15 @@ h1
     width:5%;
     font-family: urw-book-l-gothic;}
 
-.page
+ul
+    {padding: 0px;}
+ul,
+p
+    {margin-left: 4em;}
+    
+#content
     {position: absolute;
-    height: 100%;
-    width: 100%;}
+    top: 100%;}
     
-.page p
-    {position: absolute;
-    bottom: 1.5em;
-    margin: 0px;
-    right: 1.5em;
-    text-align: right;
-    width: 25%;
-    font-family: urw-book-l-gothic;
-    font-size: 3em;}
 
-@keyframes glissement-1 {
-    from
-        {background-position: -100%;}
 
-    to
-        {background-position: 100%;}
-
-}
-
-#page1
-    {top: 100%;
-    background-size: 75%;
-    background-repeat: repeat-x;
-    background-position: 50% 0.5%;
-    opacity: 0.85;
-    background-image: url('page1-background-1.png');
-    animation-duration: 8s;
-    animation-name: glissement-1;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;}
-
-#page1 div
-    {height: 100%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: 75%;
-    background-repeat: repeat-x;
-    background-position: 50%;
-    animation-name: glissement-1;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;}
-
-#page1 > div
-    {background-image: url('page1-background-2.png');
-    animation-duration: 16s;}
-
-#page1 > div > div
-    {
-    border-top: 1px solid transparent;
-    top:-1px;
-    background-image: url('page1-background-3.png');
-    animation-duration: 32s;}
-    
-#page2
-    {top: 200%;}
-
-#page3
-    {top: 300%;}
-    
-#page4
-    {top: 400%;}
