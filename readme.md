@@ -11,7 +11,7 @@ You decide the interval of time for each quiz to spawn.
 
 Question are picked randomly.
 
-YOU write your quiz.
+__YOU__ write your quiz.
 
 # DEPENDENCIES
 
@@ -21,7 +21,7 @@ Well, not much.
 - PyGObject
 - setuptools
 
-#USAGE
+# USAGE
 
     $ bram [interval]
 
@@ -42,17 +42,17 @@ Your knowledges are stored as JSON files in ~/.bram/knowledges
 A typical quiz look's like the following:
 
 	{
-    		"question": "Which number is a Mercenne prime?",
-    		"answers" : {
+		"question": "Which number is a Mercenne prime?",
+		"answers" : {
 			"7": true,
 			"9": false,
 			"4": false,
 			"5": false
-    		}
+		}
 	}
 
 Some tips to keep in mind:
 
-- Your quiz must have a question field
+- Your quiz __must__ have a question field
 - The answers field may have as many items as you want.
 - There is only one good answer.
