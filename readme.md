@@ -29,6 +29,8 @@ _**interval** is the number of minutes between each quiz._
 
 # INSTALLATION
 
+You can get the code on [github](https://github.com/denissalem/bram).
+
     ./setup.py install --user
 
 _It might be necessary to install PyGObject from your distribution package system._
@@ -53,3 +55,4 @@ Some tips to keep in mind:
 
 - Your quiz must have a question field
 - The answers field may have as many items as you want.
+- There is only one good answer.

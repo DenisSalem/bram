@@ -33,7 +33,15 @@ ul,
 p,
 pre
     {margin-left: 4em;}
+
+a
+    {color: black;
+    opacity: 0.85;
+    text-decoration: none;}
     
+a:hover
+    {background-color: black;
+    color: white;}
 #content
     {position: absolute;
     top: 100%;}
