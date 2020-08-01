@@ -41,15 +41,15 @@ Your knowledges are stored as JSON files in ~/.bram/knowledges
 
 A typical quiz look's like the following:
 
-'''{
-    "question": "Which number is a Mercenne prime?",
-    "answers" : {
-        "7": true,
-        "9": false,
-        "4": false,
-        "5": false
-    }
-}'''
+	{
+    		"question": "Which number is a Mercenne prime?",
+    		"answers" : {
+        		"7": true,
+        		"9": false,
+        		"4": false,
+        		"5": false
+    		}
+	}
 
 Some tips to keep in mind:
 
